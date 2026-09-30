@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hot Wheels para ti ❤️</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<main class="phone">
+
+  <!-- 1. ESTA PARTE SALE PRIMERO -->
+  <section id="loading" class="screen loading-screen">
+    <h1>Cargando tu ramo de<br>Hot Wheels...</h1>
+    <div class="loading-car">🏎️</div>
+    <div class="bar"><span id="bar"></span></div>
+    <div id="percent">0%</div>
+  </section>
+
+  <!-- 2. DESPUÉS APARECE EL RAMO -->
+  <section id="bouquet" class="screen bouquet-screen hidden">
+    <div class="stars"></div>
+    <h2>Feliz Día de los<br>Carritos de Hot Wheels</h2>
+
+    <div class="bouquet">
+      <button class="flower flower1" data-message="Contigo, hasta los días normales se sienten especiales. ❤️">🌼</button>
+      <button class="flower flower2" data-message="Haces que mi corazón vaya a toda velocidad. 🏎️❤️">🌼</button>
+      <button class="flower flower3" data-message="Gracias por estar conmigo y hacerme tan feliz. 💗">🌼</button>
+      <button class="flower flower4" data-message="Aceleraste mi corazón desde el primer día. 🥹❤️">🌼</button>
+      <button class="flower flower5" data-message="Te quiero muchísimo. Mi lugar favorito siempre será contigo. ❤️">🌼</button>
+
+      <div class="stem st1"></div>
+      <div class="stem st2"></div>
+      <div class="stem st3"></div>
+      <div class="ribbon">🎀</div>
+    </div>
+
+    <p class="hint">Toca una flor 🌼</p>
+  </section>
+
+  <!-- 3. MENSAJE QUE CAMBIA SEGÚN LA FLOR -->
+  <div id="message" class="message hidden">
+    <button id="close" class="close">×</button>
+    <div class="hotwheels-logo">HOT WHEELS</div>
+    <p id="messageText"></p>
+    <div class="mini-car">🏎️</div>
+  </div>
+
+  <!-- Ventana de código decorativa -->
+  <div class="code-window">
+    <div class="window-top">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="file-name">Style.css</span>
+    </div>
+    <pre><span class="yellow">.Hot_Wheels</span> {
+  <span class="white">position:</span> <span class="pink">absolute</span>;
+  <span class="white">width:</span> <span class="orange">90%</span>;
+  <span class="white">font-size:</span> <span class="orange">2rem</span>;
+  <span class="white">font-family:</span> <span class="green">"Te Amo"</span>;
+  <span class="white">height:</span> <span class="pink">var(--letter-love)</span>;
+  <span class="white">transform:</span> <span class="pink">translateX(-50%)</span>;
+}</pre>
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

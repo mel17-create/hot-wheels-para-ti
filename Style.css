@@ -1,0 +1,234 @@
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;font-family:Arial,sans-serif}
+body{background:#080008;color:#fff;display:flex;justify-content:center;align-items:center;overflow:hidden}
+
+.phone{
+  position:relative;
+  width:min(900px,94vw);
+  height:min(820px,94vh);
+  overflow:hidden;
+  border-radius:28px;
+  background:#03070b;
+  box-shadow:0 0 50px #ff008055;
+}
+
+.screen{position:absolute;inset:0}
+.hidden{display:none!important}
+
+/* CARGANDO: PRIMERO */
+.loading-screen{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:radial-gradient(circle,#071e32,#000 68%);
+  z-index:5;
+  text-align:center;
+}
+.loading-screen h1{
+  color:#78caff;
+  font-family:Georgia,serif;
+  font-size:clamp(24px,4vw,42px);
+  text-shadow:0 0 12px #168ad4;
+}
+.loading-car{
+  font-size:52px;
+  animation:carMove 1.4s infinite alternate ease-in-out;
+}
+.bar{
+  width:55%;
+  height:6px;
+  margin-top:22px;
+  background:#303030;
+  border-radius:10px;
+  overflow:hidden;
+}
+.bar span{
+  display:block;
+  width:0;
+  height:100%;
+  background:#52cfff;
+  box-shadow:0 0 12px #52cfff;
+}
+#percent{margin-top:10px;color:#8ce4ff;font-size:22px}
+
+/* RAMO */
+.bouquet-screen{
+  background:
+    radial-gradient(circle at 50% 20%,#0d2941,#02070c 55%),
+    #02070c;
+  text-align:center;
+  overflow:hidden;
+}
+.bouquet-screen:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.15;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:27px 27px;
+}
+.bouquet-screen h2{
+  position:relative;
+  z-index:4;
+  margin:45px 0 0;
+  color:#7ed1ff;
+  font:clamp(25px,4vw,43px) Georgia,serif;
+  text-shadow:0 0 10px #0c80bd;
+}
+
+.bouquet{
+  position:absolute;
+  left:50%;
+  bottom:5px;
+  width:500px;
+  height:570px;
+  transform:translateX(-50%);
+}
+.stem{
+  position:absolute;
+  bottom:75px;
+  left:50%;
+  width:7px;
+  height:315px;
+  background:linear-gradient(#38b75d,#07572b);
+  border-radius:10px;
+  transform-origin:bottom;
+  z-index:1;
+}
+.st1{transform:rotate(-25deg)}.st2{transform:rotate(0)}.st3{transform:rotate(25deg)}
+
+.flower{
+  position:absolute;
+  z-index:3;
+  width:115px;
+  height:115px;
+  border:0;
+  border-radius:50%;
+  cursor:pointer;
+  background:repeating-conic-gradient(#62d8ff 0 13deg,transparent 13deg 26deg);
+  filter:drop-shadow(0 0 8px #27bfff);
+  font-size:0;
+  transition:transform .25s,filter .25s;
+}
+.flower:after{
+  content:"";
+  position:absolute;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#06131c;
+  left:38px;
+  top:38px;
+}
+.flower:hover,.flower:active{
+  transform:scale(1.15);
+  filter:drop-shadow(0 0 20px #5edcff);
+}
+.flower1{left:40px;top:145px}
+.flower2{left:195px;top:85px}
+.flower3{right:40px;top:145px}
+.flower4{left:100px;top:235px}
+.flower5{right:100px;top:235px}
+
+.ribbon{
+  position:absolute;
+  z-index:4;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:68px;
+}
+.hint{
+  position:absolute;
+  z-index:5;
+  bottom:15px;
+  left:0;
+  right:0;
+  color:#bdeaff;
+  font-size:15px;
+  animation:pulse 1.5s infinite;
+}
+
+/* MENSAJE AL TOCAR UNA FLOR */
+.message{
+  position:absolute;
+  z-index:20;
+  left:50%;
+  top:50%;
+  width:min(500px,84%);
+  min-height:300px;
+  transform:translate(-50%,-50%) scale(.75);
+  background:linear-gradient(145deg,#e71930,#78000e);
+  border:3px solid #ffd51c;
+  border-radius:20px;
+  padding:35px 25px 25px;
+  text-align:center;
+  box-shadow:0 0 45px #ff164d99;
+  animation:pop .35s ease forwards;
+}
+.close{
+  position:absolute;
+  right:10px;
+  top:7px;
+  border:0;
+  background:transparent;
+  color:#fff;
+  font-size:34px;
+  cursor:pointer;
+}
+.hotwheels-logo{
+  color:#ffd51c;
+  font-weight:900;
+  font-style:italic;
+  font-size:32px;
+  transform:skew(-8deg);
+  text-shadow:2px 2px #d00000;
+}
+#messageText{
+  font-size:25px;
+  line-height:1.2;
+  font-weight:bold;
+  margin:55px 15px 25px;
+}
+.mini-car{font-size:42px}
+
+/* CÓDIGO */
+.code-window{
+  position:absolute;
+  z-index:10;
+  left:6%;
+  bottom:3%;
+  width:55%;
+  min-height:205px;
+  background:#03131e;
+  border-radius:13px;
+  box-shadow:0 0 25px #000c;
+  overflow:hidden;
+  pointer-events:none;
+}
+.window-top{
+  height:42px;
+  border-bottom:2px solid #263844;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:0 14px;
+}
+.dot{width:12px;height:12px;border-radius:50%}
+.r{background:#ff304f}.y{background:#ffd52e}.g{background:#5ee33d}
+.file-name{margin-left:auto;color:#aab8c0;font:12px monospace}
+pre{margin:12px 15px;color:#fff;font:12px/1.45 "Courier New",monospace}
+.yellow{color:#ffe348}.white{color:#eee}.pink{color:#ff39ae}
+.orange{color:#ff9b32}.green{color:#62e848}
+
+@keyframes carMove{from{transform:translateX(-80px)}to{transform:translateX(80px)}}
+@keyframes pop{to{transform:translate(-50%,-50%) scale(1)}}
+@keyframes pulse{50%{opacity:.35}}
+
+@media(max-width:700px){
+  .phone{height:92vh;width:96vw}
+  .bouquet{transform:translateX(-50%) scale(.7);transform-origin:bottom}
+  .code-window{width:86%;left:7%;min-height:170px}
+  pre{font-size:9px}
+}
